@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/drug-recommendation-chatbot/static/css/main.88e50bd6.css",
+    "main.js": "/drug-recommendation-chatbot/static/js/main.c2eeb057.js",
+    "static/js/453.56f46472.chunk.js": "/drug-recommendation-chatbot/static/js/453.56f46472.chunk.js",
+    "index.html": "/drug-recommendation-chatbot/index.html",
+    "main.88e50bd6.css.map": "/drug-recommendation-chatbot/static/css/main.88e50bd6.css.map",
+    "main.c2eeb057.js.map": "/drug-recommendation-chatbot/static/js/main.c2eeb057.js.map",
+    "453.56f46472.chunk.js.map": "/drug-recommendation-chatbot/static/js/453.56f46472.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88e50bd6.css",
+    "static/js/main.c2eeb057.js"
+  ]
+}
