@@ -20,15 +20,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Create .env file
+      - name: Replace API Key
         run: |
-          echo "REACT_APP_OPENROUTER_API_KEY=${{ secrets.REACT_APP_OPENROUTER_API_KEY }}" > .env
-          cat .env
+          sed -i "s/YOUR_API_KEY_HERE/${{ secrets.REACT_APP_OPENROUTER_API_KEY }}/g" src/config.ts
 
       - name: Build
         run: npm run build
-        env:
-          REACT_APP_OPENROUTER_API_KEY: ${{ secrets.REACT_APP_OPENROUTER_API_KEY }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4

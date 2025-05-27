@@ -1,8 +1,10 @@
+import { config } from '../config';
+
 export async function getDrugRecommendation(messages: {role: string, content: string}[]) {
-  const apiKey = process.env.REACT_APP_OPENROUTER_API_KEY;
+  const apiKey = config.OPENROUTER_API_KEY;
   
-  if (!apiKey) {
-    console.error('API key is missing. Please check your environment variables.');
+  if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {
+    console.error('API key is missing or invalid.');
     throw new Error('API key is missing. Please contact the administrator.');
   }
 
