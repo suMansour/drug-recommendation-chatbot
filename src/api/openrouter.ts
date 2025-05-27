@@ -2,7 +2,8 @@ export async function getDrugRecommendation(messages: {role: string, content: st
   const apiKey = process.env.REACT_APP_OPENROUTER_API_KEY;
   
   if (!apiKey) {
-    throw new Error('API key is missing. Please check your .env file.');
+    console.error('API key is missing. Please check your environment variables.');
+    throw new Error('API key is missing. Please contact the administrator.');
   }
 
   try {
@@ -11,7 +12,7 @@ export async function getDrugRecommendation(messages: {role: string, content: st
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'http://localhost:3000',
+        'HTTP-Referer': window.location.origin,
         'X-Title': 'Drug Recommendation Chatbot'
       },
       body: JSON.stringify({
