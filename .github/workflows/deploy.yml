@@ -20,10 +20,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build
+      - name: Create .env file
         run: |
-          npm run build
-          node scripts/inject-env.js
+          echo "REACT_APP_OPENROUTER_API_KEY=${{ secrets.REACT_APP_OPENROUTER_API_KEY }}" > .env
+          cat .env
+
+      - name: Build
+        run: npm run build
         env:
           REACT_APP_OPENROUTER_API_KEY: ${{ secrets.REACT_APP_OPENROUTER_API_KEY }}
 

@@ -1,6 +1,5 @@
 export async function getDrugRecommendation(messages: {role: string, content: string}[]) {
-  // Get API key from window object (set during build)
-  const apiKey = (window as any).__OPENROUTER_API_KEY__;
+  const apiKey = process.env.REACT_APP_OPENROUTER_API_KEY;
   
   if (!apiKey) {
     console.error('API key is missing. Please check your environment variables.');
