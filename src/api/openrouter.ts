@@ -1,18 +1,10 @@
 import { config } from '../config';
 
 export async function getDrugRecommendation(messages: {role: string, content: string}[]) {
-  const apiKey = config.OPENROUTER_API_KEY;
-  
-  if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {
-    console.error('API key is missing or invalid.');
-    throw new Error('API key is missing. Please contact the administrator.');
-  }
-
   try {
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': window.location.origin,
         'X-Title': 'Drug Recommendation Chatbot'
